@@ -49,8 +49,8 @@ const TaskInput : FC = () => {
     
     const addTask = (): void => {
         // create a new date and add number of days equal to value of Deadline
-        const newDate = new Date()
-        const date = newDate.setDate(newDate.getDate() + deadline)
+        const newDate: Date = new Date()
+        const date: Number = newDate.setDate(newDate.getDate() + deadline)
         const id: string = Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15)
         dispatch({type: 'ADD_TASK', payload: {id, task, deadline, date, complete: false}})
         setTask('')
